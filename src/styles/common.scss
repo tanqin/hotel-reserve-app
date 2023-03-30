@@ -1,0 +1,15 @@
+/* 主容器样式 */
+.main-container {
+  padding: 28rpx;
+}
+
+/* type='primary' 按钮 */
+uni-button[type='primary'] {
+  color: #fff !important;
+  background-color: $green !important;
+}
+
+/* 导航标签 */
+navigation-link {
+  color: $green;
+}

@@ -4,7 +4,10 @@
     {
       "path": "pages/greet/greet",
       "style": {
-        "navigationBarTitleText": "uni-app"
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleView": false
+        }
       }
     }
   ],
