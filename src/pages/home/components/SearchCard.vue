@@ -43,7 +43,7 @@ function handleSearch() {}
           </uni-row>
         </uni-forms-item>
         <uni-forms-item>
-          <uni-row gutter="30">
+          <uni-row :gutter="30">
             <uni-col :span="16">
               <uni-datetime-picker
                 v-model="searchParams.dateRange"

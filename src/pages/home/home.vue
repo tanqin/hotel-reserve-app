@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import NavGroup from './components/NavGroup.vue'
 import SearchCard from './components/SearchCard.vue'
 
 // 观看直播
@@ -19,6 +20,7 @@ function handleWatchLive() {}
     </view>
     <view class="main-part">
       <SearchCard class="search-card" />
+      <NavGroup />
     </view>
   </view>
 </template>
