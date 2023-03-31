@@ -19,7 +19,7 @@
   align-items: center;
   height: 100vh;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.7) 0%, transparent 50%),
-    url('@/static/greet.jpg') center/cover no-repeat fixed;
+    url('@/static/images/greet.jpg') center/cover no-repeat fixed;
 
   .app-title {
     display: flex;
