@@ -48,6 +48,9 @@
       /* SDK配置 */
       "sdkConfigs": {}
     }
+    // "statusbar": {
+    //   "immersed": "none"
+    // }
   },
   /* 快应用特有相关 */
   "quickapp": {},
