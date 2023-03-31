@@ -48,10 +48,10 @@ function handleForgetPassword() {
       <!-- 账号登录 -->
       <view v-show="loginWay === 'account'" class="account-login">
         <uni-forms-item label="手机号码/电子邮箱地址" required>
-          <uni-easyinput v-model="loginForm.account" :input-border="false"></uni-easyinput>
+          <uni-easyinput v-model="loginForm.account" :input-border="false" />
         </uni-forms-item>
         <uni-forms-item label="密码" required>
-          <uni-easyinput v-model="loginForm.password" :input-border="false"></uni-easyinput>
+          <uni-easyinput v-model="loginForm.password" :input-border="false" />
         </uni-forms-item>
       </view>
       <button type="primary">{{ loginWay === 'code' ? '发送验证码' : '登录' }}</button>
@@ -71,8 +71,8 @@ function handleForgetPassword() {
     <view class="other-ways-login">
       <view>使用其他方式登录</view>
       <view class="icons">
-        <uni-icons type="weixin" size="30"></uni-icons>
-        <uni-icons custom-prefix="iconfont" type="icon-apple-fill" size="30"></uni-icons>
+        <uni-icons type="weixin" size="30" />
+        <uni-icons custom-prefix="iconfont" type="icon-apple-fill" size="30" />
       </view>
     </view>
     <footer class="declaration">

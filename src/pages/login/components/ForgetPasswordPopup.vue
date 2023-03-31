@@ -1,15 +1,17 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import HeadTitle from './HeadTitle.vue'
-import type { DefineComponent } from 'vue';
-import { watch } from 'vue';
-import { computed } from 'vue';
+import type { DefineComponent } from 'vue'
+import { watch } from 'vue'
 
-const props = withDefaults(defineProps<{
-  visible: boolean
-}>(),{
-  visible: false
-})
+const props = withDefaults(
+  defineProps<{
+    visible: boolean
+  }>(),
+  {
+    visible: false
+  }
+)
 
 const popupRef = ref<DefineComponent>()
 
@@ -17,9 +19,12 @@ const loginForm = ref({
   phoneNumber: ''
 })
 
-watch(() => props.visible, (newVal) => {
-  newVal ? popupRef.value!.open() : popupRef.value!.close()
-})
+watch(
+  () => props.visible,
+  (newVal) => {
+    newVal ? popupRef.value!.open() : popupRef.value!.close()
+  }
+)
 
 const emit = defineEmits<{
   (e: 'update:visible', visible: boolean): void
@@ -35,13 +40,19 @@ const emit = defineEmits<{
 // })
 
 // 忘记密码弹出层显隐状态改变
-function handlePopupVisibleChange({ show }) {
+function handlePopupVisibleChange({ show }: { show: boolean }) {
   emit('update:visible', show)
 }
 </script>
 
 <template>
-  <uni-popup ref="popupRef" class="forget-password-popup" background-color="#fff" type="bottom" @change="handlePopupVisibleChange">
+  <uni-popup
+    ref="popupRef"
+    class="forget-password-popup"
+    background-color="#fff"
+    type="bottom"
+    @change="handlePopupVisibleChange"
+  >
     <HeadTitle title="忘记密码？" sub-title="请输入手机号码以获取登录帮助" />
     <uni-forms label-position="top">
       <view class="code-login">
@@ -94,5 +105,4 @@ function handlePopupVisibleChange({ show }) {
     }
   }
 }
-
 </style>

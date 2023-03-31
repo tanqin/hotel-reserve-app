@@ -1,10 +1,10 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3987918 */
+  font-family: 'iconfont'; /* Project id 3987918 */
   src: url('/static/iconfont/iconfont.ttf') format('truetype');
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
+  font-family: 'iconfont' !important;
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
@@ -12,6 +12,5 @@
 }
 
 .icon-apple-fill:before {
-  content: "\e881";
+  content: '\e881';
 }
-
