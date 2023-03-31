@@ -17,5 +17,9 @@ onHide(() => {
   box-sizing: border-box;
 }
 
+// 引入字体图标
+@import '@/static/iconfont/iconfont.css';
+
+// 引入公共样式
 @import '@/styles/common.scss';
 </style>

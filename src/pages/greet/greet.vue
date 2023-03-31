@@ -6,8 +6,9 @@
     <view class="slogan">有你在，便是家</view>
     <button class="register-btn" type="primary">注册</button>
     <view class="go-login">
-      已经有账号了？<navigation-link url="/pages/login/login">登录</navigation-link></view
-    >
+      已经有账号了？
+      <navigator class="login-nav" url="/pages/login/login">登录</navigator>
+    </view>
   </view>
 </template>
 
@@ -39,6 +40,9 @@
   }
   .go-login {
     flex: 0.1;
+    .login-nav {
+      display: inline-block;
+    }
   }
 }
 </style>
