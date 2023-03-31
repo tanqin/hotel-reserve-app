@@ -2,18 +2,39 @@
 import { ref } from 'vue'
 import HeadTitle from './components/HeadTitle.vue'
 import ForgetPasswordPopup from './components/ForgetPasswordPopup.vue'
+import { onLoad } from '@dcloudio/uni-app'
+import { reactive } from 'vue'
 
-const loginForm = ref({
+const loginWay = ref<'code' | 'account'>('code')
+
+onLoad((query) => {
+  loginWay.value = query!.loginWay
+})
+
+const loginForm = reactive({
   phoneNumber: '',
   account: '',
   password: ''
 })
 
-const loginWay = ref<'code' | 'account'>('code')
-
 // 切换登录方式
 function handleToggleLoginWay() {
   loginWay.value = loginWay.value === 'code' ? 'account' : 'code'
+}
+
+// 验证码登录 | 账号登录
+function handleLogin() {
+  switch (loginWay.value) {
+    case 'code':
+      // 📌调取接口
+      uni.navigateTo({ url: '/pages/login/sendCode/sendCode?phoneNumber=' + loginForm.phoneNumber })
+      break
+    case 'account':
+      // 账号登录
+      // 📌调取接口
+      uni.navigateTo({ url: '/pages/home/home' })
+      break
+  }
 }
 
 const forgetPasswordPopupVisible = ref(false)
@@ -54,7 +75,9 @@ function handleForgetPassword() {
           <uni-easyinput v-model="loginForm.password" :input-border="false" />
         </uni-forms-item>
       </view>
-      <button type="primary">{{ loginWay === 'code' ? '发送验证码' : '登录' }}</button>
+      <button type="primary" @tap="handleLogin">{{
+        loginWay === 'code' ? '发送验证码' : '登录'
+      }}</button>
     </uni-forms>
     <view class="operate">
       <button class="toggle-login-way-btn link-btn" @tap="handleToggleLoginWay"

@@ -4,10 +4,12 @@
   <view class="greet main-container">
     <view class="app-title">Rook</view>
     <view class="slogan">有你在，便是家</view>
-    <button class="register-btn" type="primary">注册</button>
+    <navigator class="register-nav" url="/pages/login/login?loginWay=code">
+      <button class="register-btn" type="primary">注册</button>
+    </navigator>
     <view class="go-login">
       已经有账号了？
-      <navigator class="login-nav" url="/pages/login/login">登录</navigator>
+      <navigator class="login-nav" url="/pages/login/login?loginWay=account">登录</navigator>
     </view>
   </view>
 </template>
@@ -33,10 +35,15 @@
     flex: 0.6;
     color: $green;
   }
-  .register-btn {
-    width: 100%;
-    margin-bottom: 30rpx;
-    border-radius: 46rpx !important;
+  > :deep(.navigator-wrap) {
+    width: 100% !important;
+  }
+  .register-nav {
+    .register-btn {
+      width: 100%;
+      margin-bottom: 30rpx;
+      border-radius: 46rpx !important;
+    }
   }
   .go-login {
     flex: 0.1;

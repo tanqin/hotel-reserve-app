@@ -22,6 +22,21 @@
       "style": {
         "navigationBarTitleText": ""
       }
+    },
+    {
+      "path": "pages/login/sendCode/sendCode",
+      "style": {
+        "navigationBarTitleText": ""
+      }
+    },
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleView": false
+        }
+      }
     }
   ],
   "globalStyle": {
