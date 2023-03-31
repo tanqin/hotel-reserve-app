@@ -2,6 +2,7 @@
 withDefaults(
   defineProps<{
     title: string
+    color?: string
     subTitle?: string
   }>(),
   {
@@ -12,8 +13,14 @@ withDefaults(
 
 <template>
   <view class="head-title">
-    <view class="title">{{ title }}</view>
-    <view class="sub-title">{{ subTitle }} </view>
+    <view
+      class="title"
+      :style="{
+        color: color
+      }"
+      >{{ title }}</view
+    >
+    <view class="sub-title"> <slot></slot>{{ subTitle }} </view>
   </view>
 </template>
 
@@ -21,6 +28,7 @@ withDefaults(
 .head-title {
   .title {
     font-size: 48rpx;
+    margin-bottom: 10rpx;
   }
   .sub-title {
     color: $gray;

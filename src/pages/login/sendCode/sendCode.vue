@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import HeadTitle from '../components/HeadTitle.vue'
 import { onLoad } from '@dcloudio/uni-app'
 import { computed } from 'vue'
 

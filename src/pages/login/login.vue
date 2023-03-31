@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import HeadTitle from './components/HeadTitle.vue'
 import ForgetPasswordPopup from './components/ForgetPasswordPopup.vue'
 import { onLoad } from '@dcloudio/uni-app'
 import { reactive } from 'vue'

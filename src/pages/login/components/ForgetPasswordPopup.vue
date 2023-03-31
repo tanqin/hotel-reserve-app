@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import HeadTitle from './HeadTitle.vue'
 import type { DefineComponent } from 'vue'
 import { watch } from 'vue'
 
