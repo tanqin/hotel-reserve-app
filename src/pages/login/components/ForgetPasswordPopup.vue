@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { DefineComponent } from 'vue'
+import { reactive } from 'vue'
 import { watch } from 'vue'
 
 const props = withDefaults(
@@ -14,7 +15,7 @@ const props = withDefaults(
 
 const popupRef = ref<DefineComponent>()
 
-const loginForm = ref({
+const loginForm = reactive({
   phoneNumber: ''
 })
 
@@ -29,18 +30,17 @@ const emit = defineEmits<{
   (e: 'update:visible', visible: boolean): void
 }>()
 
-// computed({
-//   get() {
-//     return props.visible
-//   },
-//   set(newVal) {
-//     emit('update:visible', newVal)
-//   }
-// })
-
 // 忘记密码弹出层显隐状态改变
 function handlePopupVisibleChange({ show }: { show: boolean }) {
   emit('update:visible', show)
+}
+
+// 发送验证码
+function handleSendCode() {
+  // 📌调取接口
+  uni.navigateTo({
+    url: '/pages/login/sendCode/sendCode?phoneNumber=' + loginForm.phoneNumber
+  })
 }
 </script>
 
@@ -66,7 +66,7 @@ function handlePopupVisibleChange({ show }: { show: boolean }) {
           />
         </uni-forms-item>
       </view>
-      <button type="primary">发送验证码</button>
+      <button type="primary" @tap="handleSendCode">发送验证码</button>
     </uni-forms>
   </uni-popup>
 </template>
