@@ -3,23 +3,23 @@ import { reactive } from 'vue'
 
 const navList = reactive([
   {
-    icon: 'icon-jiazheng_huaban1fuben20',
+    icon: 'icon-cook',
     label: '可以做饭'
   },
   {
-    icon: 'icon-fangyuan',
+    icon: 'icon-house',
     label: '整个房源'
   },
   {
-    icon: 'icon-yuechi',
+    icon: 'icon-key',
     label: '自助入住'
   },
   {
-    icon: 'icon-tejiajipiaobiaoqian',
+    icon: 'icon-fund',
     label: '特惠房源'
   },
   {
-    icon: 'icon-paizhao',
+    icon: 'icon-photo',
     label: '当地体验'
   }
 ])

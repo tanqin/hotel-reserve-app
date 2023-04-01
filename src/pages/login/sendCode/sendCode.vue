@@ -20,7 +20,7 @@ const secretPhoneNumber = computed(() => {
 // 登录
 function handleLogin() {
   // 📌调取接口
-  uni.navigateTo({ url: '/pages/home/home' })
+  uni.switchTab({ url: '/pages/home/home' })
 }
 </script>
 

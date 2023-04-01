@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3987918 */
-  src: url('/static/iconfont/iconfont.ttf') format('truetype');
+  src: url('static/iconfont/iconfont.ttf?t=1680327507589') format('truetype');
 }
 
 .iconfont {
@@ -11,23 +11,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-fangyuan:before {
+.icon-home:before {
+  content: "\e600";
+}
+
+.icon-wish:before {
+  content: "\e611";
+}
+
+.icon-mine:before {
+  content: "\e8a0";
+}
+
+.icon-inbox:before {
+  content: "\e64f";
+}
+
+.icon-house:before {
   content: "\e610";
 }
 
-.icon-paizhao:before {
+.icon-photo:before {
   content: "\e872";
 }
 
-.icon-tejiajipiaobiaoqian:before {
+.icon-fund:before {
   content: "\e8cc";
 }
 
-.icon-jiazheng_huaban1fuben20:before {
+.icon-cook:before {
   content: "\e616";
 }
 
-.icon-yuechi:before {
+.icon-key:before {
   content: "\e6b4";
 }
 

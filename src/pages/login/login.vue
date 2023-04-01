@@ -31,7 +31,7 @@ function handleLogin() {
     case 'account':
       // 账号登录
       // 📌调取接口
-      uni.navigateTo({ url: '/pages/home/home' })
+      uni.switchTab({ url: '/pages/home/home' })
       break
   }
 }
