@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import DiscountsList from './components/DiscountsList.vue'
+import DiscountList from './components/DiscountList.vue'
 import GuessList from './components/GuessList.vue'
 import NavGroup from './components/NavGroup.vue'
 import SearchCard from './components/SearchCard.vue'
-import SpecialsList from './components/SpecialsList.vue'
+import SpecialList from './components/SpecialList.vue'
 
 // 观看直播
 function handleWatchLive() {}
@@ -27,8 +27,8 @@ function handleWatchLive() {}
         <SearchCard class="search-card" />
         <NavGroup />
         <view class="recommend-module">
-          <SpecialsList />
-          <DiscountsList />
+          <SpecialList />
+          <DiscountList />
           <GuessList />
         </view>
       </view>

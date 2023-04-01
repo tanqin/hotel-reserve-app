@@ -3,7 +3,7 @@ import DiscountCard from './DiscountCard.vue'
 </script>
 
 <template>
-  <view class="discounts-list">
+  <view class="discount-list">
     <HeadTitle title="成都房东直降优惠" subTitle="房东直接让利，更多超值选择" />
     <view class="card-list">
       <uni-row>
@@ -20,6 +20,6 @@ import DiscountCard from './DiscountCard.vue'
 </template>
 
 <style lang="scss" scoped>
-.discounts-list {
+.discount-list {
 }
 </style>

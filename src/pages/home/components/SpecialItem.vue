@@ -5,7 +5,7 @@ const rateValue = ref(4)
 </script>
 
 <template>
-  <view class="specials-item">
+  <view class="special-item">
     <image class="pic" src="/static/images/landmark-city.png" mode="aspectFill" />
     <view class="facility">整套公寓·1室1卫1床</view>
     <view class="name one-line-overflow">寓见·消毒安心住·观景plus</view>
@@ -18,7 +18,7 @@ const rateValue = ref(4)
 </template>
 
 <style lang="scss" scoped>
-.specials-item {
+.special-item {
   padding: 10rpx;
   font-size: 28rpx;
   line-height: 2;
