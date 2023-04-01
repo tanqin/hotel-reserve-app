@@ -19,8 +19,19 @@ function handleWatchLive() {}
       </HeadTitle>
     </view>
     <view class="main-part">
-      <SearchCard class="search-card" />
-      <NavGroup />
+      <!-- main-scroll-container 为滚动容器 -->
+      <view class="main-scroll-container">
+        <SearchCard class="search-card" />
+        <NavGroup />
+        <view class="recommend-module">
+          <HeadTitle title="短途盛夏特惠" subTitle="短途房源贴心推荐，低至7折" />
+          <ul>
+            <li v-for="item in 100" :key="item">
+              <h2>测试滚动{{ item }}</h2>
+            </li>
+          </ul>
+        </view>
+      </view>
     </view>
   </view>
 </template>
@@ -28,12 +39,13 @@ function handleWatchLive() {}
 <style lang="scss" scoped>
 .home {
   position: relative;
+  background: url('@/static/images/landmark-city.png') no-repeat center / cover;
   .status-bar {
     height: var(--status-bar-height);
-    width: 100%;
   }
   .top-part {
-    height: 780rpx;
+    height: 700rpx;
+    padding-top: 100rpx;
     .head-title {
       .watch-live-btn {
         width: 274rpx;
@@ -49,21 +61,15 @@ function handleWatchLive() {}
     left: 0;
     right: 0;
     height: 100vh;
-    overflow: hidden;
-    overflow-y: auto;
-    &::after {
-      position: absolute;
-      content: '';
-      z-index: -1;
-      top: 0;
-      left: -25%;
-      width: 150%;
-      height: 480rpx;
-      background: url('@/static/images/landmark-city.png') center / cover no-repeat;
-      border-radius: 0 0 100% 100%;
-    }
-    .search-card {
-      margin-top: 296rpx !important;
+    overflow: auto;
+    .main-scroll-container {
+      background: radial-gradient(circle at center -680rpx, transparent 962rpx, #fff 0);
+      .search-card {
+        margin-top: calc(var(--status-bar-height) + 300rpx) !important;
+      }
+      .recommend-module {
+        padding: 28rpx;
+      }
     }
   }
 }
