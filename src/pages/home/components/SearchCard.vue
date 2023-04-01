@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import { ref } from 'vue'
+import CitySelectPopup from './CitySelectPopup.vue'
 
 const searchParams = reactive({
   type: 0,
@@ -13,6 +14,12 @@ const currentTab = ref(0)
 // 切换 tabs
 function handleToggle(index: number) {
   currentTab.value = index
+}
+
+const citySelectPopupVisible = ref(false)
+// 选择城市
+function handleSelectCity() {
+  citySelectPopupVisible.value = true
 }
 
 // 搜索
@@ -35,7 +42,7 @@ function handleSearch() {}
         <uni-forms-item class="position">
           <uni-row>
             <uni-col :span="18">
-              <input v-model="searchParams.city" />
+              <input v-model="searchParams.city" @focus="handleSelectCity" />
             </uni-col>
             <uni-col :span="6">
               <view class="current-position"><uni-icons type="location" /> 当前位置</view>
@@ -60,6 +67,7 @@ function handleSearch() {}
         <button type="primary" @tap="handleSearch">搜索房源</button>
       </uni-forms>
     </view>
+    <CitySelectPopup v-model:visible="citySelectPopupVisible" />
   </uni-card>
 </template>
 
