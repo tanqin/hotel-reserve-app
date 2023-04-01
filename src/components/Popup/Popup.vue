@@ -60,7 +60,7 @@ function handleClose() {
   :deep(.uni-popup__wrapper) {
     position: relative;
     overflow-y: scroll;
-    height: 100vh;
+    height: calc(100vh - var(--status-bar-height));
     padding: 28rpx 28rpx var(--window-bottom);
     .nav-bar {
       display: flex;

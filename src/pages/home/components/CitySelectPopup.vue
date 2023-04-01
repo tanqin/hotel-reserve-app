@@ -309,8 +309,10 @@ const cityList = ref([
 </template>
 
 <style lang="scss" scoped>
-.city-list {
-  position: relative;
-  height: 800rpx;
+.city-select-popup {
+  .city-list {
+    position: relative;
+    height: 800rpx;
+  }
 }
 </style>
