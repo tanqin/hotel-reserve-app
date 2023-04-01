@@ -22,16 +22,16 @@ withDefaults(
 
 <style lang="scss" scoped>
 .discount-card {
-  display: inline-block;
   position: relative;
   overflow: hidden;
-  width: 322rpx;
+  width: 100%;
   height: 336rpx;
-  background-color: $bg-color-placeholder;
-  border-radius: 10rpx;
+  padding: 10rpx;
   .pic {
     width: 100%;
     height: 100%;
+    background-color: $bg-color-placeholder;
+    border-radius: 10rpx;
   }
   .tag {
     position: absolute;

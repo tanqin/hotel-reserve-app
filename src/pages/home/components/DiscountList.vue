@@ -19,7 +19,4 @@ import DiscountCard from './DiscountCard.vue'
   </view>
 </template>
 
-<style lang="scss" scoped>
-.discount-list {
-}
-</style>
+<style lang="scss" scoped></style>
