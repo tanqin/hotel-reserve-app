@@ -20,7 +20,11 @@
     {
       "path": "pages/login/login",
       "style": {
-        "navigationBarTitleText": ""
+        "navigationBarTitleText": "",
+        "app-plus": {
+          "softinputMode": "adjustResize",
+          "adjust-position": false
+        }
       }
     },
     {
