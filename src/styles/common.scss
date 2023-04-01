@@ -13,3 +13,25 @@ uni-button[type='primary'] {
 uni-navigator {
   color: $green;
 }
+
+/* 当行文本溢出隐藏 */
+.one-line-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 隐藏滚动条 */
+.hidden-scroll-bar {
+  &::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+
+/* 外边距 */
+.mb24 {
+  margin-bottom: 24rpx;
+}
+.mr24 {
+  margin-right: 24rpx;
+}

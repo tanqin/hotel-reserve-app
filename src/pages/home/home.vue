@@ -1,6 +1,9 @@
 <script lang="ts" setup>
+import DiscountsList from './components/DiscountsList.vue'
+import GuessList from './components/GuessList.vue'
 import NavGroup from './components/NavGroup.vue'
 import SearchCard from './components/SearchCard.vue'
+import SpecialsList from './components/SpecialsList.vue'
 
 // 观看直播
 function handleWatchLive() {}
@@ -24,12 +27,9 @@ function handleWatchLive() {}
         <SearchCard class="search-card" />
         <NavGroup />
         <view class="recommend-module">
-          <HeadTitle title="短途盛夏特惠" subTitle="短途房源贴心推荐，低至7折" />
-          <ul>
-            <li v-for="item in 100" :key="item">
-              <h2>测试滚动{{ item }}</h2>
-            </li>
-          </ul>
+          <SpecialsList />
+          <DiscountsList />
+          <GuessList />
         </view>
       </view>
     </view>

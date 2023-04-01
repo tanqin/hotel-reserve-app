@@ -26,6 +26,7 @@ withDefaults(
 
 <style lang="scss" scoped>
 .head-title {
+  margin-bottom: 20rpx;
   .title {
     font-size: 48rpx;
     margin-bottom: 10rpx;
