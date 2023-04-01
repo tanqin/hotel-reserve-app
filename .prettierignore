@@ -8,3 +8,6 @@
 /docs/**/*
 /plop/**/*
 CHANGELOG
+/src/static/
+pnpm-lock.yaml
+tsconfig.json
