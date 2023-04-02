@@ -80,7 +80,7 @@ function getHouseList() {
     if (pageNo * pageSize <= 100) {
       for (let i = (pageNo - 1) * pageSize; i < pageNo * pageSize; i++) {
         list.push({
-          id: i,
+          id: i.toString(),
           pictures: [
             [
               'https://img02.mockplus.cn/image/2020-09-08/552a6c00-f12c-11ea-9d17-11b700b7f8d3.jpg',
@@ -92,27 +92,27 @@ function getHouseList() {
           facility: '整套房子 · 1室1卫1床',
           tags: [
             {
-              id: 1,
+              id: '1',
               text: '太古里'
             },
             {
-              id: 100,
+              id: '100',
               text: '超赞房东'
             },
             {
-              id: 102,
+              id: '102',
               text: '安心住'
             },
             {
-              id: 103,
+              id: '103',
               text: '免费停车'
             },
             {
-              id: 104,
+              id: '104',
               text: '附近地铁'
             },
             {
-              id: 105,
+              id: '105',
               text: '可以做饭'
             }
           ],

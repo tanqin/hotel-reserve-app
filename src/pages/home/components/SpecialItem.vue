@@ -6,10 +6,16 @@ defineProps<{
   showMoreTag?: boolean
   houseInfo: THouseInfo
 }>()
+
+// 跳转房源详情
+function handleGoDetail(id: string) {
+  console.log(id)
+  uni.navigateTo({ url: '/pages/home/houseDetail/houseDetail?id=' + id })
+}
 </script>
 
 <template>
-  <view class="special-item">
+  <view class="special-item" @tap="handleGoDetail(houseInfo.id)">
     <image
       class="pic"
       :style="{ height: showMoreTag && '412rpx' }"

@@ -12,7 +12,7 @@ function getCityList() {
     cityList.value = []
     for (let i = 0; i < 4; i++) {
       cityList.value.push({
-        id: i,
+        id: i.toString(),
         coverUrl: [
           'https://img02.mockplus.cn/image/2020-09-07/9ad6d2b0-f0dd-11ea-bc40-179c46417a14.jpeg',
           'https://img02.mockplus.cn/image/2020-09-07/ba478770-f0dd-11ea-9731-9f5dce9cc7fd.jpg',

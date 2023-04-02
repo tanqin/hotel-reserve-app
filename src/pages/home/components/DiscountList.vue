@@ -13,7 +13,7 @@ function getDiscountHouseList() {
     let list: THouseInfo[] = []
     for (let i = 0; i < 3; i++) {
       list.push({
-        id: i,
+        id: i.toString(),
         pictures: [
           [
             'https://img02.mockplus.cn/image/2020-09-07/2979a210-f0dc-11ea-a598-1b4f0bef9f1b.jpg',

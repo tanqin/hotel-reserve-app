@@ -44,6 +44,15 @@
       }
     },
     {
+      "path": "pages/home/houseDetail/houseDetail",
+      "style": {
+        "navigationStyle": "custom",
+        "app-plus": {
+          "titleView": false
+        }
+      }
+    },
+    {
       "path": "pages/wish/wish",
       "style": {
         "navigationStyle": "custom",

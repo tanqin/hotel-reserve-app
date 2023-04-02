@@ -23,7 +23,7 @@ export type THouseQueryParams = {
 /* 标签 */
 export type TTag = {
   // 主键
-  id: string | number
+  id: string
   // 标签文本
   text: string
   // 级别（不同级别展示不同颜色）
@@ -33,7 +33,7 @@ export type TTag = {
 /* 房源信息 */
 export type THouseInfo = {
   // 主键
-  id: string | number
+  id: string
   // 图片
   pictures: string[]
   // 设施
@@ -55,7 +55,7 @@ export type THouseInfo = {
 /* 城市信息 */
 export type TCity = {
   // 主键
-  id: string | number
+  id: string
   // 封面图地址
   coverUrl: string
   // 城市名

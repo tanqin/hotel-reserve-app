@@ -10,10 +10,20 @@ withDefaults(
     size: 'default'
   }
 )
+
+// 跳转房源详情
+function handleGoDetail(id: string) {
+  console.log(id)
+  uni.navigateTo({ url: '/pages/home/houseDetail/houseDetail?id=' + id })
+}
 </script>
 
 <template>
-  <view class="discount-card" :style="{ height: size === 'small' && '156rpx' }">
+  <view
+    class="discount-card"
+    :style="{ height: size === 'small' && '156rpx' }"
+    @tap="handleGoDetail(data.id)"
+  >
     <image
       class="pic"
       :src="data?.pictures[0] || '/static/images/default-pic.png'"

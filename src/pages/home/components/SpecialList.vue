@@ -14,7 +14,7 @@ function getSpecialHouseList() {
     let list: THouseInfo[] = []
     for (let i = 0; i < 4; i++) {
       list.push({
-        id: i,
+        id: i.toString(),
         pictures: [
           [
             'https://img02.mockplus.cn/image/2020-09-08/552a6c00-f12c-11ea-9d17-11b700b7f8d3.jpg',
@@ -49,7 +49,7 @@ onShow(() => {
       <uni-grid-item
         v-for="specialHouse in specialHouseList"
         :key="specialHouse.id"
-        :index="specialHouse.id"
+        :index="Number(specialHouse.id)"
       >
         <SpecialItem :houseInfo="specialHouse" />
       </uni-grid-item>
