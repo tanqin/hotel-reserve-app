@@ -1,7 +1,9 @@
 /* 房源查询参数 */
 export type THouseQueryParams = {
-  // 查询类型（0：国内 1：国际/港澳台）
-  type: 0 | 1
+  // 地区类型（0：国内 1：国际/港澳台）
+  regionType: 0 | 1
+  // 折扣类型（1：短途盛夏特惠 2：房东直降优惠）
+  discountType?: 1 | 2
   // 城市
   city: string
   // 景点/地点/房源名

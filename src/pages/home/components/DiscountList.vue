@@ -1,5 +1,41 @@
 <script lang="ts" setup>
+import type { THouseInfo } from '@/types/home'
 import DiscountCard from './DiscountCard.vue'
+import { ref } from 'vue'
+import { onShow } from '@dcloudio/uni-app'
+
+const discountHouseList = ref<THouseInfo[]>([])
+
+// 获取优惠房源列表
+function getDiscountHouseList() {
+  // 📌调取接口
+  setTimeout(() => {
+    let list: THouseInfo[] = []
+    for (let i = 0; i < 3; i++) {
+      list.push({
+        id: i,
+        pictures: [
+          [
+            'https://img02.mockplus.cn/image/2020-09-07/2979a210-f0dc-11ea-a598-1b4f0bef9f1b.jpg',
+            'https://img02.mockplus.cn/image/2020-09-07/2d73b310-f0dc-11ea-baac-95a5b71ad650.jpg',
+            'https://img02.mockplus.cn/image/2020-09-07/32698930-f0dc-11ea-baac-95a5b71ad650.jpg'
+          ][Math.floor(Math.random() * 3)]
+        ],
+        facility: '整套房子 · 1室1卫1床',
+        tags: [],
+        name: '寓见·消毒安心住·观景plus',
+        currentPrice: 394,
+        originalPrice: 788,
+        discountTag: ['限时5折起', '低至5折', '低至8折'][i]
+      })
+    }
+    discountHouseList.value = list
+  }, 500)
+}
+
+onShow(() => {
+  getDiscountHouseList()
+})
 </script>
 
 <template>
@@ -8,11 +44,11 @@ import DiscountCard from './DiscountCard.vue'
     <view class="card-list">
       <uni-row>
         <uni-col :span="12">
-          <DiscountCard />
+          <DiscountCard :data="discountHouseList[0]" />
         </uni-col>
         <uni-col :span="12">
-          <DiscountCard size="small" class="mb24" />
-          <DiscountCard size="small" />
+          <DiscountCard :data="discountHouseList[1]" size="small" class="mb24" />
+          <DiscountCard :data="discountHouseList[2]" size="small" />
         </uni-col>
       </uni-row>
     </view>

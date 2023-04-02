@@ -7,7 +7,7 @@ import CitySelectPopup from './CitySelectPopup.vue'
 import { computed } from 'vue'
 
 const searchParams = reactive<THouseQueryParams>({
-  type: 0,
+  regionType: 0,
   city: '成都市',
   startTime: '2023/4/1',
   endTime: '2023/4/2',
@@ -47,9 +47,9 @@ function handleSearch() {
     <uni-segmented-control
       class="region-tabs"
       style-type="button"
-      :current="searchParams.type"
+      :current="searchParams.regionType"
       :values="[RegionType[0], RegionType[1]]"
-      @clickItem="searchParams.type = $event.currentIndex"
+      @clickItem="searchParams.regionType = $event.currentIndex"
     />
     <view class="form">
       <uni-forms>
@@ -76,7 +76,7 @@ function handleSearch() {
             <uni-col :span="10">
               <div class="number-of-people">
                 共
-                <uni-number-box :min="1" :max="100" v-model="searchParams.numOfPeople" />人
+                <uni-number-box :min="1" :max="100" v-model="searchParams.numOfPeople" /> 人
               </div>
             </uni-col>
           </uni-row>

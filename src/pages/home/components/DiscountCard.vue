@@ -1,6 +1,9 @@
 <script lang="ts" setup>
+import type { THouseInfo } from '@/types/home'
+
 withDefaults(
   defineProps<{
+    data: THouseInfo
     size?: 'default' | 'small'
   }>(),
   {
@@ -11,10 +14,14 @@ withDefaults(
 
 <template>
   <view class="discount-card" :style="{ height: size === 'small' && '156rpx' }">
-    <image class="pic" src="/static/images/greet.jpg" mode="aspectFill" />
+    <image
+      class="pic"
+      :src="data?.pictures[0] || '/static/images/default-pic.png'"
+      mode="aspectFill"
+    />
     <uni-tag
       class="tag"
-      text="限时5折起"
+      :text="data?.discountTag"
       custom-style="background-color: #fff;border-color: #fff; color: #d8001b; font-weight: bold;"
     />
   </view>

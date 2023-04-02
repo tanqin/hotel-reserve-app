@@ -11,3 +11,4 @@ CHANGELOG
 /src/static/
 pnpm-lock.yaml
 tsconfig.json
+/src/uni_modules
