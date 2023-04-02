@@ -296,8 +296,10 @@ const cityList = ref([
       active-color="#008a85"
     />
     <view class="hot-city mb24">
+      <h4>热门城市</h4>
       <CityCheckbox />
     </view>
+    <h4>所有城市</h4>
     <uni-indexed-list class="city-list" :options="cityList" :showSelect="true" />
   </Popup>
 </template>
@@ -306,7 +308,8 @@ const cityList = ref([
 .city-select-popup {
   .city-list {
     position: relative;
-    height: 800rpx;
+    height: 730rpx;
+    overflow: hidden;
   }
 }
 </style>

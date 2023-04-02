@@ -55,7 +55,6 @@ const emit = defineEmits<{
 
 const popupVisible = computed({
   get() {
-    console.log('props.visible', props.visible)
     props.visible && getAllTagList()
     return props.visible
   },

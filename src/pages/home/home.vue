@@ -23,9 +23,6 @@ function handleSearch(params: THouseQueryParams) {
 
 <template>
   <view class="home main-container">
-    <view class="status-bar">
-      <!-- 这里是状态栏 -->
-    </view>
     <view class="top-part">
       <HeadTitle class="head-title" title="和好友住进小院民宿" color="#fff">
         <button class="watch-live-btn" size="mini" plain @tap="handleWatchLive"
@@ -56,14 +53,14 @@ function handleSearch(params: THouseQueryParams) {
 .home {
   position: relative;
   background: url('@/static/images/landmark-city.png') no-repeat center / cover;
-  .status-bar {
-    height: var(--status-bar-height);
-  }
   .top-part {
     height: 700rpx;
     padding-top: 100rpx;
     .head-title {
       .watch-live-btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         width: 274rpx;
         height: 74rpx;
         color: #fff;
