@@ -11,9 +11,9 @@ const specialHouseList = ref<THouseInfo[]>([])
 function getSpecialHouseList() {
   // 📌调取接口
   setTimeout(() => {
-    let list: THouseInfo[] = []
+    specialHouseList.value = []
     for (let i = 0; i < 4; i++) {
-      list.push({
+      specialHouseList.value.push({
         id: i.toString(),
         pictures: [
           [
@@ -25,14 +25,14 @@ function getSpecialHouseList() {
         ],
         facility: '整套房子 · 1室1卫1床',
         tags: [],
-        name: '寓见·消毒安心住·观景plus',
+        title: '寓见·消毒安心住·观景plus',
         currentPrice: 394,
         originalPrice: 788,
         discountTag: '5折 · 仅限今晚',
-        score: Math.floor(Math.random() * 5) + 1
+        score: Math.floor(Math.random() * 5) + 1,
+        city: '成都市'
       })
     }
-    specialHouseList.value = list
   }, 500)
 }
 

@@ -41,7 +41,7 @@ export type THouseInfo = {
   // 房子标签
   tags: TTag[]
   // 名称
-  name: string
+  title: string
   // 现价
   currentPrice: number
   // 原价
@@ -50,6 +50,13 @@ export type THouseInfo = {
   discountTag: string
   // 评分（星星数量）
   score?: number
+  // 房源介绍
+  introduce?: string
+  // 所在城市
+  city: string
+} & {
+  // 是否已收藏
+  collected?: boolean
 }
 
 /* 城市信息 */

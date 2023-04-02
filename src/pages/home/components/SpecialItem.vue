@@ -25,7 +25,7 @@ function handleGoDetail(id: string) {
     <view class="facility">
       <uni-tag v-if="showMoreTag" :text="houseInfo.tags[0]?.text" /> {{ houseInfo.facility }}</view
     >
-    <view class="name one-line-overflow">{{ houseInfo.name }}</view>
+    <view class="name one-line-overflow">{{ houseInfo.title }}</view>
     <TagGroup v-if="showMoreTag" :tagList="houseInfo.tags.slice(1)" backgroundColor="#fff" />
     <view class="price"
       ><text class="current-price">￥{{ houseInfo.currentPrice || '??' }}</text
@@ -40,7 +40,7 @@ function handleGoDetail(id: string) {
       activeColor="#008a85"
       v-if="!showMoreTag"
     />
-    <view class="tag" v-if="!showMoreTag">{{ houseInfo.tags[0] }}</view>
+    <view class="tag" v-if="!showMoreTag">{{ houseInfo.tags?.[0].text }}</view>
   </view>
 </template>
 

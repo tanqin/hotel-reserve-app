@@ -116,10 +116,11 @@ function getHouseList() {
               text: '可以做饭'
             }
           ],
-          name: '寓见·消毒安心住·观景plus',
+          title: '寓见·消毒安心住·观景plus',
           currentPrice: 394,
           originalPrice: 788,
-          discountTag: '5折 · 仅限今晚'
+          discountTag: '5折 · 仅限今晚',
+          city: '成都市'
         })
       }
     }

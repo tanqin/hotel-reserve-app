@@ -14,11 +14,21 @@ uni-navigator {
   color: $green;
 }
 
-/* 当行文本溢出隐藏 */
+/* 单行文本溢出隐藏 */
 .one-line-overflow {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+/* 2行文本溢出隐藏 */
+.two-line-overflow {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 /* 隐藏滚动条 */
@@ -28,7 +38,7 @@ uni-navigator {
   }
 }
 
-/* 外边距 */
+/* 外、内边距 */
 .mr24 {
   margin-right: 24rpx;
 }
@@ -37,4 +47,13 @@ uni-navigator {
 }
 .mb24 {
   margin-bottom: 24rpx;
+}
+.mt24 {
+  margin-top: 24rpx;
+}
+.p24 {
+  padding: 24rpx;
+}
+.mtb24 {
+  margin: 24rpx 0 24rpx;
 }
