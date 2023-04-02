@@ -40,7 +40,7 @@ function handleGoDetail(id: string) {
       activeColor="#008a85"
       v-if="!showMoreTag"
     />
-    <view class="tag" v-if="!showMoreTag">{{ houseInfo.tags?.[0].text }}</view>
+    <view class="tag" v-if="!showMoreTag">{{ houseInfo.tags?.[0]?.text }}</view>
   </view>
 </template>
 
