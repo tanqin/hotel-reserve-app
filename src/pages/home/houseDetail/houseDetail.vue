@@ -216,8 +216,10 @@ function handleContactLandlord() {
       <h3>房源概况</h3>
       <uni-grid :column="4" :showBorder="false" :square="false">
         <uni-grid-item v-for="item in 4" :key="item">
-          <uni-icons type="home" />
-          <view class="info">1间卧室</view>
+          <view class="general-item mtb24">
+            <uni-icons class="icon" type="home" />
+            <view class="info">1间卧室</view>
+          </view>
         </uni-grid-item>
       </uni-grid>
       <uni-row :gutter="20">
@@ -306,6 +308,7 @@ function handleContactLandlord() {
       height: 64rpx;
       background-color: #fff;
       border-radius: 50%;
+      box-shadow: rgb(0 0 0 / 8%) 2px 1px 6px 5px;
       &.share-icon {
         margin-right: 24rpx;
       }
@@ -344,6 +347,16 @@ function handleContactLandlord() {
   }
   .general-info {
     border-bottom: 14rpx solid $border-color-light-gray;
+    .general-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #000;
+      .icon {
+        margin-bottom: 10rpx;
+      }
+    }
     .uni-card {
       display: flex;
       height: 176rpx;
