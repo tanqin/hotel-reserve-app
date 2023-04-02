@@ -1,16 +1,20 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { DefineComponent } from 'vue'
+import { useSlots } from 'vue'
 import { watch } from 'vue'
 
 const props = withDefaults(
   defineProps<{
     visible: boolean
     navTitle?: string
+    // 默认顶部导航是否可见
+    showTop?: boolean
   }>(),
   {
     visible: false,
-    navTitle: ''
+    navTitle: '',
+    showTop: true
   }
 )
 
@@ -36,6 +40,9 @@ function handlePopupVisibleChange({ show }: { show: boolean }) {
 function handleClose() {
   emit('update:visible', false)
 }
+
+// 判断插槽 <slot name="top"/> 是否有传值
+const slotTop = !!useSlots().top
 </script>
 
 <template>
@@ -45,11 +52,12 @@ function handleClose() {
     background-color="#fff"
     @change="handlePopupVisibleChange"
   >
-    <view class="nav-bar">
+    <view class="default-top-bar" v-if="!slotTop && showTop">
       <uni-icons type="closeempty" @tap="handleClose" />
       <view class="title">{{ navTitle }}</view>
       <view class="cancel" @tap="handleClose">取消</view>
     </view>
+    <slot name="top"></slot>
     <slot></slot>
   </uni-popup>
 </template>
@@ -60,12 +68,12 @@ function handleClose() {
   :deep(.uni-popup__wrapper) {
     position: relative;
     overflow-y: scroll;
+    width: 750rpx;
     height: calc(100vh - var(--status-bar-height));
-    padding: 28rpx 28rpx var(--window-bottom);
-    .nav-bar {
+    padding: 28rpx 28rpx var(--window-bottom) !important;
+    .default-top-bar {
       display: flex;
       justify-content: space-between;
-      align-self: start;
       padding: 0 6rpx 28rpx;
     }
   }

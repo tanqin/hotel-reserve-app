@@ -14,7 +14,7 @@
   overflow: hidden;
   width: 276rpx;
   height: 276rpx;
-  background-color: $bg-color-placeholder;
+  background-color: $bgc-placeholder;
   border-radius: 10rpx;
   .pic {
     width: 276rpx;

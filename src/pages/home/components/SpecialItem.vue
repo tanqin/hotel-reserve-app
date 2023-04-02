@@ -1,19 +1,40 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import type { THouseInfo } from '@/types/home'
 
-const rateValue = ref(4)
+defineProps<{
+  // 是否展示更多标签
+  showMoreTag?: boolean
+  houseInfo: THouseInfo
+}>()
 </script>
 
 <template>
   <view class="special-item">
-    <image class="pic" src="/static/images/landmark-city.png" mode="aspectFill" />
-    <view class="facility">整套公寓·1室1卫1床</view>
-    <view class="name one-line-overflow">寓见·消毒安心住·观景plus</view>
-    <view class="price"
-      ><text class="current-price">￥148</text><text class="original-price">￥158</text>/晚</view
+    <image
+      class="pic"
+      :style="{ height: showMoreTag && '412rpx' }"
+      :src="houseInfo?.pictures[0] || '/static/images/default-pic.png'"
+      mode="aspectFill"
+    />
+    <view class="facility">
+      <uni-tag v-if="showMoreTag" :text="houseInfo.tags[0]?.text" /> {{ houseInfo.facility }}</view
     >
-    <uni-rate :value="rateValue" size="16" activeColor="#008a85" />
-    <view class="explain">超赞房东</view>
+    <view class="name one-line-overflow">{{ houseInfo.name }}</view>
+    <TagGroup v-if="showMoreTag" :tagList="houseInfo.tags.slice(1)" backgroundColor="#fff" />
+    <view class="price"
+      ><text class="current-price">￥{{ houseInfo.currentPrice || '??' }}</text
+      ><text class="original-price">￥{{ houseInfo.originalPrice || '??' }}</text
+      >/晚
+      <uni-tag v-if="showMoreTag" :text="houseInfo.discountTag" />
+    </view>
+    <uni-rate
+      readonly
+      :value="houseInfo.score"
+      size="16"
+      activeColor="#008a85"
+      v-if="!showMoreTag"
+    />
+    <view class="tag" v-if="!showMoreTag">{{ houseInfo.tags[0] }}</view>
   </view>
 </template>
 
@@ -24,27 +45,44 @@ const rateValue = ref(4)
   line-height: 2;
   .pic {
     width: 100%;
-    height: 192rpx;
+    height: 214rpx;
+    background-color: $bgc-placeholder;
     border-radius: 10rpx;
   }
   .facility {
     color: $gray;
+    .uni-tag {
+      margin-right: 10rpx;
+      border: none;
+      background-color: #000;
+      font-weight: bold;
+    }
   }
   .name {
     font-size: 30rpx;
+    font-weight: bold;
   }
   .price {
     font-size: 24rpx;
     .current-price {
+      color: $red;
       font-size: 28rpx;
+      font-weight: bold;
     }
     .original-price {
       margin: 0 10rpx;
       color: $gray;
       text-decoration: line-through;
     }
+    .uni-tag {
+      margin-left: 10rpx;
+      border: none;
+      background-color: $bgc-pink;
+      color: $red;
+      font-weight: bold;
+    }
   }
-  .explain {
+  .tag {
     color: $gray;
   }
 }

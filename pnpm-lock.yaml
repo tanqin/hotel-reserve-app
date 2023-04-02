@@ -40,6 +40,7 @@ specifiers:
   vue: ^3.2.45
   vue-i18n: ^9.1.9
   vue-tsc: ^1.0.24
+  z-paging: ^2.5.7
 
 dependencies:
   '@dcloudio/uni-app': 3.0.0-alpha-3070720230316001_dmldr7bp476y375eo6yedfigkq
@@ -58,6 +59,7 @@ dependencies:
   '@dcloudio/uni-ui': 1.4.26
   vue: 3.2.47
   vue-i18n: 9.2.2_vue@3.2.47
+  z-paging: 2.5.7
 
 devDependencies:
   '@dcloudio/types': 3.3.2
@@ -5849,3 +5851,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /z-paging/2.5.7:
+    resolution: {integrity: sha512-mLjDy2s0ZRYNF8xl/mnZb+aGsveCGtR9G4H3BQUwNnr1hZpK8tQx2zKDnLtUxO0isOX+Y25QWlbk75t7tsOVfw==}
+    engines: {HBuilderX: ^3.0.7}
+    dev: false

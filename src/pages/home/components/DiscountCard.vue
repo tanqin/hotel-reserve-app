@@ -30,7 +30,7 @@ withDefaults(
   .pic {
     width: 100%;
     height: 100%;
-    background-color: $bg-color-placeholder;
+    background-color: $bgc-placeholder;
     border-radius: 10rpx;
   }
   .tag {

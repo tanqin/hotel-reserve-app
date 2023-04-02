@@ -47,7 +47,7 @@ const cityData = [
 <style lang="scss" scoped>
 .city-checkbox {
   overflow-x: auto;
-  background-color: $bg-color-gray;
+  background-color: $bgc-gray;
   :deep(.checklist-group) {
     display: block;
     white-space: nowrap;

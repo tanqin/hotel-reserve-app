@@ -1,42 +1,55 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import { ref } from 'vue'
+import type { THouseQueryParams } from '@/types/home'
+import { RegionType } from '@/enums/home'
 import CitySelectPopup from './CitySelectPopup.vue'
+import { computed } from 'vue'
 
-const searchParams = reactive({
+const searchParams = reactive<THouseQueryParams>({
   type: 0,
   city: '成都市',
-  dateRange: ['2021-02-1', '2021-3-28']
+  startTime: '2023/4/1',
+  endTime: '2023/4/2',
+  numOfPeople: 1,
+  pageNo: 1,
+  pageSize: 10
 })
 
-const currentTab = ref(0)
-
-// 切换 tabs
-function handleToggle(index: number) {
-  currentTab.value = index
-}
+const dateRange = computed({
+  get() {
+    return [searchParams.startTime, searchParams.endTime]
+  },
+  set(newVal) {
+    ;[searchParams.startTime, searchParams.endTime] = newVal
+  }
+})
 
 const citySelectPopupVisible = ref(false)
+
 // 选择城市
 function handleSelectCity() {
   citySelectPopupVisible.value = true
 }
 
+const emit = defineEmits<{
+  (e: 'search', searchParams: THouseQueryParams): void
+}>()
+
 // 搜索
-function handleSearch() {}
+function handleSearch() {
+  emit('search', searchParams)
+}
 </script>
 
 <template>
   <uni-card class="search-card" spacing="0" padding="0">
-    <ul class="tabs">
-      <li
-        v-for="(item, index) in ['国内', '国际/港澳台']"
-        :key="index"
-        :class="{ 'is-active': index === currentTab }"
-        @tap="handleToggle(index)"
-        >{{ item }}</li
-      >
-    </ul>
+    <uni-segmented-control
+      style-type="button"
+      :current="searchParams.type"
+      :values="[RegionType[0], RegionType[1]]"
+      @clickItem="searchParams.type = $event.currentIndex"
+    />
     <view class="form">
       <uni-forms>
         <uni-forms-item class="position">
@@ -50,16 +63,20 @@ function handleSearch() {}
           </uni-row>
         </uni-forms-item>
         <uni-forms-item>
-          <uni-row :gutter="30">
-            <uni-col :span="16">
+          <uni-row>
+            <uni-col :span="14">
               <uni-datetime-picker
-                v-model="searchParams.dateRange"
+                v-model="dateRange"
                 :border="false"
                 type="daterange"
+                :clear-icon="false"
               />
             </uni-col>
-            <uni-col :span="8">
-              <view class="number-of-people">共 <text class="num">99</text> 房客人数</view>
+            <uni-col :span="10">
+              <div class="number-of-people">
+                共
+                <uni-number-box :min="1" :max="100" v-model="searchParams.numOfPeople" />人
+              </div>
             </uni-col>
           </uni-row>
         </uni-forms-item>
@@ -74,30 +91,29 @@ function handleSearch() {}
 <style lang="scss" scoped>
 .search-card {
   border-radius: 30rpx;
-  .tabs {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    li {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 88rpx;
-      background-color: #f2f2f2;
+  :deep(.segmented-control) {
+    height: 88rpx;
+    .segmented-control__item {
+      border: none;
+      background-color: $bgc-gray !important;
       &:nth-child(1) {
-        border-bottom-right-radius: 25rpx;
+        border-bottom-right-radius: 44rpx;
       }
       &:nth-child(2) {
-        border-bottom-left-radius: 25rpx;
+        border-bottom-left-radius: 44rpx;
       }
-      &.is-active {
-        color: #000;
-        background-color: #fff;
+      .segmented-control__text {
+        color: $gray !important;
+      }
+
+      &.segmented-control__item--button--active {
+        background-color: #fff !important;
+        .segmented-control__text {
+          color: #000 !important;
+        }
       }
     }
   }
-
   .form {
     padding: 28rpx;
 
@@ -110,8 +126,10 @@ function handleSearch() {}
       }
     }
     .number-of-people {
-      height: 60rpx;
-      line-height: 60rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70rpx;
     }
     .explain {
       margin-bottom: 20rpx;

@@ -33,3 +33,21 @@
 ---
 
 ## 功能记录
+
+## Get 新知识
+
+1. 子组件中定义的 `boolean` 类型 `props` 参数，父组件不传入该参数的情况下，子组件默认收到的就是 false。
+
+```vue
+<!-- 父组件 -->
+<Son />
+
+<!-- 子组件 <Son/> -->
+<script lang="ts" setup>
+defineProps<{
+  flag?: boolean // 父组件中没传入该参数，拿到的是 false，而不是 undefined
+}>()
+</script>
+```
+
+---

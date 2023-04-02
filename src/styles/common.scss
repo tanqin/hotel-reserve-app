@@ -1,6 +1,6 @@
 /* 主容器样式 */
 .main-container {
-  padding: 28rpx;
+  padding: 24rpx;
 }
 
 /* type='primary' 按钮 */
@@ -29,12 +29,12 @@ uni-navigator {
 }
 
 /* 外边距 */
+.mr24 {
+  margin-right: 24rpx;
+}
 .mb10 {
   margin-bottom: 10rpx;
 }
 .mb24 {
   margin-bottom: 24rpx;
-}
-.mr24 {
-  margin-right: 24rpx;
 }

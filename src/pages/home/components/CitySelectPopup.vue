@@ -3,13 +3,6 @@ import { computed } from 'vue'
 import CityCheckbox from './CityCheckbox.vue'
 import { ref } from 'vue'
 
-enum CountryType {
-  '国内' = 0,
-  '国际/港澳台' = 1
-}
-
-console.log(CountryType)
-
 const props = withDefaults(
   defineProps<{
     visible?: boolean
