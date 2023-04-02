@@ -45,6 +45,7 @@ function handleSearch() {
 <template>
   <uni-card class="search-card" spacing="0" padding="0">
     <uni-segmented-control
+      class="region-tabs"
       style-type="button"
       :current="searchParams.type"
       :values="[RegionType[0], RegionType[1]]"
@@ -91,9 +92,9 @@ function handleSearch() {
 <style lang="scss" scoped>
 .search-card {
   border-radius: 30rpx;
-  :deep(.segmented-control) {
+  .region-tabs {
     height: 88rpx;
-    .segmented-control__item {
+    :deep(.segmented-control__item) {
       border: none;
       background-color: $bgc-gray !important;
       &:nth-child(1) {
@@ -114,6 +115,7 @@ function handleSearch() {
       }
     }
   }
+
   .form {
     padding: 28rpx;
 

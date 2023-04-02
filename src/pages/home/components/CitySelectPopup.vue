@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import CityCheckbox from './CityCheckbox.vue'
 import { ref } from 'vue'
+import { RegionType } from '@/enums/home'
 
 const props = withDefaults(
   defineProps<{
@@ -290,7 +291,7 @@ const cityList = ref([
     <uni-easyinput class="mb10" type="text" prefixIcon="search" placeholder="输入城市名称" />
     <uni-segmented-control
       class="mb10"
-      :values="['国内', '国际/港澳台']"
+      :values="[RegionType[0], RegionType[1]]"
       style-type="text"
       active-color="#008a85"
     />
