@@ -51,3 +51,13 @@ export type THouseInfo = {
   // 评分（星星数量）
   score?: number
 }
+
+/* 城市信息 */
+export type TCity = {
+  // 主键
+  id: string | number
+  // 封面图地址
+  coverUrl: string
+  // 城市名
+  cityName: string
+}

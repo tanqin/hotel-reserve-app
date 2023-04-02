@@ -19,7 +19,7 @@ function getDiscountHouseList() {
             'https://img02.mockplus.cn/image/2020-09-07/2979a210-f0dc-11ea-a598-1b4f0bef9f1b.jpg',
             'https://img02.mockplus.cn/image/2020-09-07/2d73b310-f0dc-11ea-baac-95a5b71ad650.jpg',
             'https://img02.mockplus.cn/image/2020-09-07/32698930-f0dc-11ea-baac-95a5b71ad650.jpg'
-          ][Math.floor(Math.random() * 3)]
+          ][i]
         ],
         facility: '整套房子 · 1室1卫1床',
         tags: [],

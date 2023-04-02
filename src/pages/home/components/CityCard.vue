@@ -1,9 +1,15 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import type { TCity } from '@/types/home'
+
+defineProps<{
+  data: TCity
+}>()
+</script>
 
 <template>
   <view class="city-card">
-    <image class="pic" src="/static/images/greet.jpg" mode="aspectFill" />
-    <view class="city">重庆</view>
+    <image class="pic" :src="data.coverUrl" mode="aspectFill" />
+    <view class="city">{{ data.cityName }}</view>
   </view>
 </template>
 
