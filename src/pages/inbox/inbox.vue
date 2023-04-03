@@ -23,11 +23,17 @@ function getMessageList() {
       for (let i = (pageNo - 1) * pageSize; i < pageNo * pageSize; i++) {
         list.push({
           id: i.toString(),
-          avatarUrl: 'https://www.dmoe.cc/random.php?timestamp' + Date.now(),
-          nickname: i.toString() + '小哈😁',
+          avatarUrl:
+            i === 1
+              ? 'https://cdn.seovx.com/?mom=302'
+              : 'https://www.dmoe.cc/random.php?timestamp=' + Date.now(),
+          nickname: i === 1 ? '出行频道' : i.toString() + '小哈😁',
           date: '2020/5/17',
-          content: `<p>你好 小哈😁，我叫小士。在Rook上...</p><p>行程已完成 · 2020/5/16 -2020/5/17</p>`,
-          isSystemNotice: false
+          content:
+            i === 1
+              ? `<p>你好！让每一位房客都住得安心..</p>`
+              : `<p>你好 小哈😁，我叫小士。在Rook上...</p><p>行程已完成 · 2020/5/16 -2020/5/17</p>`,
+          isSystemNotice: i === 1
         })
       }
     }

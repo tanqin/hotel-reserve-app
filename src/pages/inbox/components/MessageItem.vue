@@ -15,7 +15,10 @@ defineProps<{
     />
     <view class="info">
       <view class="user-info">
-        <rich-text class="name" :nodes="data.nickname" />
+        <rich-text
+          :class="['name', data.isSystemNotice && 'is-system-notice']"
+          :nodes="data.nickname"
+        />
         <text class="date">{{ data.date }}</text>
         <uni-icons type="right" />
       </view>
@@ -45,6 +48,9 @@ defineProps<{
       .name {
         flex: 1;
         color: #000;
+        &.is-system-notice {
+          color: $green;
+        }
       }
       .date {
         margin-right: 20rpx;
