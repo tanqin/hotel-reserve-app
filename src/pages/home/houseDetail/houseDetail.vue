@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onLoad, onShow } from '@dcloudio/uni-app'
-import type { THouseInfo } from '@/types/home'
+import type { THouseInfo } from '@/types/home.type'
 import SpecialItem from '../components/SpecialItem.vue'
 import type { DefineComponent } from 'vue'
 import BookTool from './components/BookTool.vue'

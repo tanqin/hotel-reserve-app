@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onShow } from '@dcloudio/uni-app'
-import type { THouseInfo } from '@/types/home'
+import type { THouseInfo } from '@/types/home.type'
 import CityCheckbox from './CityCheckbox.vue'
 import SpecialItem from './SpecialItem.vue'
 

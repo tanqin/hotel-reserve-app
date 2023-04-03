@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import { ref } from 'vue'
-import type { THouseQueryParams } from '@/types/home'
+import type { THouseQueryParams } from '@/types/home.type'
 import { RegionType } from '@/enums/home'
 import CitySelectPopup from './CitySelectPopup.vue'
 import { computed } from 'vue'

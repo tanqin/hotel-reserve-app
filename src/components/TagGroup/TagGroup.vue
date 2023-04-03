@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { TTag } from '@/types/home'
+import type { TTag } from '@/types/home.type'
 import { computed } from 'vue'
 import { ref } from 'vue'
 

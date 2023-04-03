@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { THouseInfo, THouseQueryParams, TTag } from '@/types/home'
+import type { THouseInfo, THouseQueryParams, TTag } from '@/types/home.type'
 import { computed } from 'vue'
 import SpecialItem from './SpecialItem.vue'
 import { ref } from 'vue'

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { THouseQueryParams } from '@/types/home'
+import type { THouseQueryParams } from '@/types/home.type'
 import DiscountList from './components/DiscountList.vue'
 import GuessList from './components/GuessList.vue'
 import NavGroup from './components/NavGroup.vue'

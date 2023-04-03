@@ -3,10 +3,11 @@ import { ref } from 'vue'
 import FolderCard from './components/FolderCard.vue'
 import { onShow } from '@dcloudio/uni-app'
 import HouseItem from './components/HouseItem.vue'
-import type { THouseInfo } from '@/types/home'
+import type { THouseInfo } from '@/types/home.type'
 import { computed } from 'vue'
 import { reactive } from 'vue'
 import type { DefineComponent } from 'vue'
+import type { TPageParams } from '@/types/common.type'
 
 const myCollectionCount = ref(0)
 
@@ -35,10 +36,7 @@ function handleViewHistory() {
 const paging = ref<DefineComponent>()
 const houseList = ref<THouseInfo[]>([])
 const houseTotal = ref(0)
-const searchParams = reactive<{
-  pageNo: number
-  pageSize: number
-}>({
+const searchParams = reactive<TPageParams>({
   pageNo: 1,
   pageSize: 10
 })

@@ -1,18 +1,25 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import type { TMessage } from '@/types/inbox.type'
+
+defineProps<{
+  data: TMessage
+}>()
+</script>
 
 <template>
   <view class="message-item">
-    <image class="avatar" src="/static/images/default-avatar.png" mode="aspectFill" />
+    <image
+      class="avatar"
+      :src="data.avatarUrl || '/static/images/default-avatar.png'"
+      mode="aspectFill"
+    />
     <view class="info">
       <view class="user-info">
-        <text class="name">小野</text>
-        <text class="date">2020/5/17</text>
+        <rich-text class="name" :nodes="data.nickname" />
+        <text class="date">{{ data.date }}</text>
         <uni-icons type="right" />
       </view>
-      <article class="message-info">
-        <p>你好 小野，我叫小摹。在Rook上...</p>
-        <p>行程已完成 · 2020/5/16 -2020/5/17</p>
-      </article>
+      <rich-text class="message-info" :nodes="data.content" />
     </view>
   </view>
 </template>

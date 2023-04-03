@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { TCity } from '@/types/home'
+import type { TCity } from '@/types/home.type'
 
 defineProps<{
   data: TCity

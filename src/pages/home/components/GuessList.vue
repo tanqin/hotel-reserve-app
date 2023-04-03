@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import CityCard from './CityCard.vue'
-import type { TCity } from '@/types/home'
+import type { TCity } from '@/types/home.type'
 import { onShow } from '@dcloudio/uni-app'
 
 const cityList = ref<TCity[]>([])

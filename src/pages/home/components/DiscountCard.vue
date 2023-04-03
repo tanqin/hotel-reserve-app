@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { THouseInfo } from '@/types/home'
+import type { THouseInfo } from '@/types/home.type'
 
 withDefaults(
   defineProps<{
