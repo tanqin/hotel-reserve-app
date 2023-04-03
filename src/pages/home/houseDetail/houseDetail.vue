@@ -319,7 +319,7 @@ function handleContactLandlord() {
     width: 100%;
   }
   .base-info {
-    border-bottom: 2rpx solid $border-color-light-gray;
+    border-bottom: 2rpx solid $bdc-light-gray;
     .notes {
       line-height: 2;
       .quality {
@@ -336,7 +336,7 @@ function handleContactLandlord() {
   .discount-info {
     display: flex;
     align-items: center;
-    border-bottom: 14rpx solid $border-color-light-gray;
+    border-bottom: 14rpx solid $bdc-light-gray;
     .discount-description {
       flex: 1;
       .discount-tag {
@@ -346,7 +346,7 @@ function handleContactLandlord() {
     }
   }
   .general-info {
-    border-bottom: 14rpx solid $border-color-light-gray;
+    border-bottom: 14rpx solid $bdc-light-gray;
     .general-item {
       display: flex;
       flex-direction: column;
@@ -364,17 +364,17 @@ function handleContactLandlord() {
     }
   }
   .intro-info {
-    border-bottom: 14rpx solid $border-color-light-gray;
+    border-bottom: 14rpx solid $bdc-light-gray;
 
     .view-more {
       color: $green;
     }
   }
   .evaluate-info {
-    border-bottom: 14rpx solid $border-color-light-gray;
+    border-bottom: 14rpx solid $bdc-light-gray;
   }
   .location-info {
-    border-bottom: 14rpx solid $border-color-light-gray;
+    border-bottom: 14rpx solid $bdc-light-gray;
     .map-container {
       height: 276rpx;
       background-color: $bgc-placeholder;
@@ -384,9 +384,7 @@ function handleContactLandlord() {
     }
   }
   .notice-info {
-    border-bottom: 14rpx solid $border-color-light-gray;
-  }
-  .more-info {
+    border-bottom: 14rpx solid $bdc-light-gray;
   }
 }
 </style>
