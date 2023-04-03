@@ -14,6 +14,13 @@ uni-navigator {
   color: $green;
 }
 
+/* 多选框样式 */
+uni-checkbox {
+  .uni-checkbox-input {
+    border-radius: 50% !important;
+  }
+}
+
 /* 单行文本溢出隐藏 */
 .one-line-overflow {
   overflow: hidden;

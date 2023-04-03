@@ -162,7 +162,6 @@ const defaultIndex = [0, 0, 0, 0]
 // 下拉菜单过滤搜索
 function handleSelected(res: any) {
   console.log(res)
-
   // searchParams.numberOfPeople = res[0][0].value === 0 ? undefined : res[0][0].value
   // searchParams.position  = res[1][0].value === 0 ? undefined : res[1][0].value
   // searchParams.comprehensive = res[2][0].value === 0 ? undefined : res[2][0].value

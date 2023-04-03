@@ -74,10 +74,10 @@ function handleSearch() {
               />
             </uni-col>
             <uni-col :span="10">
-              <div class="number-of-people">
+              <view class="number-of-people">
                 共
                 <uni-number-box :min="1" :max="100" v-model="searchParams.numOfPeople" /> 人
-              </div>
+              </view>
             </uni-col>
           </uni-row>
         </uni-forms-item>

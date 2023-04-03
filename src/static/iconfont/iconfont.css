@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 3987918 */
-  src: url('static/iconfont/iconfont.ttf?t=1680327507589') format('truetype');
+  src: url('static/iconfont/iconfont.ttf') format('truetype');
 }
 
 .iconfont {
@@ -9,6 +9,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-folder:before {
+  content: "\e631";
+}
+
+.icon-history:before {
+  content: "\e7ce";
 }
 
 .icon-home:before {

@@ -9,7 +9,6 @@ defineProps<{
 
 // 跳转房源详情
 function handleGoDetail(id: string) {
-  console.log(id)
   uni.navigateTo({ url: '/pages/home/houseDetail/houseDetail?id=' + id })
 }
 </script>
@@ -25,7 +24,7 @@ function handleGoDetail(id: string) {
     <view class="facility">
       <uni-tag v-if="showMoreTag" :text="houseInfo.tags[0]?.text" /> {{ houseInfo.facility }}</view
     >
-    <view class="name one-line-overflow">{{ houseInfo.title }}</view>
+    <view class="title one-line-overflow">{{ houseInfo.title }}</view>
     <TagGroup v-if="showMoreTag" :tagList="houseInfo.tags.slice(1)" backgroundColor="#fff" />
     <view class="price"
       ><text class="current-price">￥{{ houseInfo.currentPrice || '??' }}</text
@@ -64,7 +63,7 @@ function handleGoDetail(id: string) {
       font-weight: bold;
     }
   }
-  .name {
+  .title {
     font-size: 30rpx;
     font-weight: bold;
   }

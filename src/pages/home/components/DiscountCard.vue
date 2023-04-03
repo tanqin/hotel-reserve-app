@@ -13,7 +13,6 @@ withDefaults(
 
 // 跳转房源详情
 function handleGoDetail(id: string) {
-  console.log(id)
   uni.navigateTo({ url: '/pages/home/houseDetail/houseDetail?id=' + id })
 }
 </script>
