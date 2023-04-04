@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ForgetPasswordPopup from './components/ForgetPasswordPopup.vue'
-import { onLoad } from '@dcloudio/uni-app'
+import { onBackPress, onLoad } from '@dcloudio/uni-app'
 import { reactive } from 'vue'
 
 const loginWay = ref<'code' | 'account'>('code')
@@ -40,9 +40,16 @@ const forgetPasswordPopupVisible = ref(false)
 
 // 忘记密码
 function handleForgetPassword() {
-  //
   forgetPasswordPopupVisible.value = true
 }
+
+onBackPress(() => {
+  // 「忘记密码弹出层」打开时，侧滑时仅关闭弹出层，不执行退出操作
+  if (forgetPasswordPopupVisible.value) {
+    forgetPasswordPopupVisible.value = false
+    return true
+  }
+})
 </script>
 
 <template>
@@ -112,6 +119,7 @@ function handleForgetPassword() {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 88rpx);
+  overflow: hidden;
   .code-login,
   .account-login {
     height: 360rpx;
