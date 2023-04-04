@@ -52,7 +52,7 @@ const queryList = (pageNo: number, pageSize: number) => {
 <template>
   <z-paging class="inbox" ref="paging" v-model="messageList" @query="queryList">
     <template #top>
-      <HeadTitle class="p24" title="收件箱" subTitle="您没有未读消息" />
+      <HeadTitle class="main-container" title="收件箱" subTitle="您没有未读消息" />
     </template>
     <view class="plrb24">
       <MessageItem v-for="message in messageList" :key="message.id" :data="message" />

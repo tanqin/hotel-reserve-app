@@ -123,7 +123,7 @@ const swipeShow = computed(() => {
 <template>
   <z-paging class="wish" ref="paging" v-model="houseList" @query="queryList">
     <template #top>
-      <view class="p24">
+      <view class="main-container">
         <HeadTitle title="心愿单" />
         <uni-row class="card-group">
           <uni-col :span="12">
