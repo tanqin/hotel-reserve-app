@@ -73,7 +73,7 @@ function handleSearch(params: THouseQueryParams) {
     top: 0;
     left: 0;
     right: 0;
-    height: 100vh;
+    height: calc(100vh - var(--window-bottom));
     overflow: auto;
     .main-scroll-container {
       background: radial-gradient(circle at center -680rpx, transparent 962rpx, #fff 0);
@@ -81,7 +81,7 @@ function handleSearch(params: THouseQueryParams) {
         margin-top: calc(var(--status-bar-height) + 300rpx) !important;
       }
       .recommend-module {
-        padding: 28rpx;
+        padding: 28rpx 28rpx 0;
       }
     }
   }
