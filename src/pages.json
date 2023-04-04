@@ -98,7 +98,8 @@
         "iconfont": {
           "text": "\ue600",
           "color": "#000",
-          "selectedColor": "#d8001b"
+          "selectedColor": "#d8001b",
+          "fontSize": "24px"
         }
       },
       {
@@ -107,7 +108,8 @@
         "iconfont": {
           "text": "\ue611",
           "color": "#000",
-          "selectedColor": "#d8001b"
+          "selectedColor": "#d8001b",
+          "fontSize": "22px"
         }
       },
       {
@@ -116,7 +118,8 @@
         "iconfont": {
           "text": "\ue64f",
           "color": "#000",
-          "selectedColor": "#d8001b"
+          "selectedColor": "#d8001b",
+          "fontSize": "22px"
         }
       },
       {
@@ -125,7 +128,8 @@
         "iconfont": {
           "text": "\ue8a0",
           "color": "#000",
-          "selectedColor": "#d8001b"
+          "selectedColor": "#d8001b",
+          "fontSize": "22px"
         }
       }
     ]

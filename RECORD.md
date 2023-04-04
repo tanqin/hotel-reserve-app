@@ -32,6 +32,10 @@
 
 ---
 
+4. App 端 tabBar 使用字体图标时，图标很小，但是测试 H5 端不存在该问题
+
+解决： `pages.json` 文件 `tabBar -> list -> iconfont -> fontSize` 可以设置字体图标大小。
+
 ## 功能记录
 
 ## Get 新知识
