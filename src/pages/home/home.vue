@@ -28,6 +28,19 @@ function handleSearch(params: THouseQueryParams) {
   searchResultPopupVisible.value = true
 }
 
+// 快捷查询
+function handleQuickSearch() {
+  searchParams.value = {
+    regionType: 0,
+    city: '成都市',
+    startTime: '2023/4/4',
+    endTime: '2023/4/5',
+    numOfPeople: 2,
+    pageNo: 1,
+    pageSize: 10
+  }
+  searchResultPopupVisible.value = true
+}
 onBackPress(() => {
   // 「城市选择弹出层」或「搜索结果弹出层」打开时，侧滑时仅关闭弹出层，不执行退出操作
   if (citySelectPopupVisible.value || searchResultPopupVisible.value) {
@@ -79,7 +92,7 @@ const gridCardList = [
           v-model:visible="searchResultPopupVisible"
           :searchParams="searchParams!"
         />
-        <GridCard :list="gridCardList" :column="5" color="#f59b22" />
+        <GridCard :list="gridCardList" :column="5" color="#f59b22" @itemTap="handleQuickSearch" />
         <view class="recommend-module">
           <SpecialList />
           <DiscountList />
