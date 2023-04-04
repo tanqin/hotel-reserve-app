@@ -11,6 +11,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-safety-center:before {
+  content: "\e895";
+}
+
+.icon-order:before {
+  content: "\e897";
+}
+
+.icon-valid-order:before {
+  content: "\e899";
+}
+
+.icon-unpaid-order:before {
+  content: "\e659";
+}
+
+.icon-help:before {
+  content: "\e8ac";
+}
+
 .icon-folder:before {
   content: "\e631";
 }

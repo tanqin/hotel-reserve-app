@@ -7,3 +7,9 @@ export type TPageParams = {
   pageNo: number
   pageSize: number
 }
+
+/* 空格卡片项 */
+export type TGridCardItem = {
+  // 图标名称 | 文本内容
+  [key in 'icon' | 'text']: string
+}
