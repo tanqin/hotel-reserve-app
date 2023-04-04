@@ -70,7 +70,11 @@ function handlePublishHouse() {}
         <view class="days">今天是 App 陪伴你的第 520 天</view>
         <view class="view-profile-btn">查看并编辑个人资料</view>
       </view>
-      <image class="avatar" src="/static/images/default-avatar.png" mode="aspectFill" />
+      <image
+        class="avatar"
+        :src="'https://cdn.seovx.com/?mom=302' || '/static/images/default-avatar.png'"
+        mode="aspectFill"
+      />
     </view>
     <view class="my-house-order ptb24">
       <h3>我的房源订单</h3>

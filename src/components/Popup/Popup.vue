@@ -91,12 +91,12 @@ const slotTop = !!useSlots().top
         z-index: 1;
         left: 0rpx;
         right: 0rpx;
-        top: 0;
+        top: var(--status-bar-height);
         padding: 24rpx 24rpx;
       }
     }
     .placeholder-box {
-      height: 90rpx;
+      height: calc(90rpx + var(--status-bar-height));
     }
   }
 }

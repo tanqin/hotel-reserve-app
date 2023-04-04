@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onLoad, onShow } from '@dcloudio/uni-app'
+import { onBackPress, onLoad, onShow } from '@dcloudio/uni-app'
 import type { DefineComponent } from 'vue'
 import type { THouseInfo } from '@/types/home.type'
 import SpecialItem from '../components/SpecialItem.vue'
@@ -172,6 +172,14 @@ const photoWallPopupVisible = ref(false)
 function handleViewHousePhoto() {
   photoWallPopupVisible.value = true
 }
+
+onBackPress(() => {
+  // 「房源实拍弹出层」打开时，侧滑时仅关闭弹出层，不执行退出操作
+  if (photoWallPopupVisible.value) {
+    photoWallPopupVisible.value = false
+    return true
+  }
+})
 
 // 联系房东
 function handleContactLandlord() {
