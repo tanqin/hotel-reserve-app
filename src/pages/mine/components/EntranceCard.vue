@@ -15,7 +15,7 @@ defineProps<{
 .entrance-card {
   display: flex;
   align-items: center;
-  padding: 24rpx 0;
+  padding: 30rpx 0;
   border-bottom: 2rpx solid $bdc-light-gray;
   font-size: 36rpx;
   .title {

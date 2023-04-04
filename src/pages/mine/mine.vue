@@ -1,8 +1,10 @@
 <script lang="ts" setup>
 import type { TGridCardItem } from '@/types/common.type'
 import EntranceCard from './components/EntranceCard.vue'
+import SettingPopup from './components/SettingPopup.vue'
+import { ref } from 'vue'
 
-const entranceIconList = [
+const GridCardIconList = [
   {
     icon: 'icon-order',
     text: '全部订单'
@@ -29,6 +31,13 @@ const entranceIconList = [
   }
 ]
 
+const settingPopupVisible = ref(false)
+
+// 点击设置
+function handleSetting() {
+  settingPopupVisible.value = true
+}
+
 // 点击查看
 function handleView(item: TGridCardItem) {
   console.log(item)
@@ -44,7 +53,7 @@ function handlePublishHouse() {}
 <template>
   <view class="mine main-container">
     <view class="setting mb24">
-      <uni-icons type="gear" size="30" />
+      <uni-icons type="gear" size="30" @tap="handleSetting" />
     </view>
     <view class="user-info">
       <view class="base-info">
@@ -54,15 +63,16 @@ function handlePublishHouse() {}
       </view>
       <image class="avatar" src="/static/images/default-avatar.png" mode="aspectFill" />
     </view>
-    <view class="my-house-order p24">
+    <view class="my-house-order ptb24">
       <h3>我的房源订单</h3>
-      <GridCard :list="entranceIconList" @itemTap="handleView" />
+      <GridCard :list="GridCardIconList" @itemTap="handleView" />
     </view>
-    <view class="toggle-mode">
+    <view class="toggle-mode ptb24">
       <h3>成为房东/体验达人</h3>
       <EntranceCard title="开发体验" @tap="handleExperience" />
       <EntranceCard title="发布房源" @tap="handlePublishHouse" />
     </view>
+    <SettingPopup v-model:visible="settingPopupVisible" />
   </view>
 </template>
 
@@ -78,7 +88,7 @@ function handlePublishHouse() {}
     border-bottom: 2rpx solid $bdc-light-gray;
     .base-info {
       flex: 1;
-      line-height: 1.5;
+      line-height: 2;
       color: $gray;
       .nickname {
         color: #000;
