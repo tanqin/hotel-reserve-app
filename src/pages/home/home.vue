@@ -7,9 +7,18 @@ import SearchCard from './components/SearchCard.vue'
 import SpecialList from './components/SpecialList.vue'
 import SearchResultPopup from './components/SearchResultPopup.vue'
 import { ref } from 'vue'
+import { onBackPress } from '@dcloudio/uni-app'
+import CitySelectPopup from './components/CitySelectPopup.vue'
 
 // 观看直播
 function handleWatchLive() {}
+
+const citySelectPopupVisible = ref(false)
+
+// 选择城市
+function handleSelectCity() {
+  citySelectPopupVisible.value = true
+}
 
 const searchParams = ref<THouseQueryParams>()
 const searchResultPopupVisible = ref(false)
@@ -19,6 +28,15 @@ function handleSearch(params: THouseQueryParams) {
   searchParams.value = params
   searchResultPopupVisible.value = true
 }
+
+onBackPress(() => {
+  // 「城市选择弹出层」或「搜索结果弹出层」打开时，侧滑时仅关闭弹出层，不执行退出操作
+  if (citySelectPopupVisible.value || searchResultPopupVisible.value) {
+    citySelectPopupVisible.value = false
+    searchResultPopupVisible.value = false
+    return true
+  }
+})
 </script>
 
 <template>
@@ -33,7 +51,8 @@ function handleSearch(params: THouseQueryParams) {
     <view class="main-part">
       <!-- main-scroll-container 为滚动容器 -->
       <view class="main-scroll-container">
-        <SearchCard class="search-card" @search="handleSearch" />
+        <SearchCard class="search-card" @search="handleSearch" @selectCity="handleSelectCity" />
+        <CitySelectPopup v-model:visible="citySelectPopupVisible" />
         <SearchResultPopup
           v-model:visible="searchResultPopupVisible"
           :searchParams="searchParams!"

@@ -1,8 +1,9 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
+import { onBackPress } from '@dcloudio/uni-app'
 import type { TGridCardItem } from '@/types/common.type'
 import EntranceCard from './components/EntranceCard.vue'
 import SettingPopup from './components/SettingPopup.vue'
-import { ref } from 'vue'
 
 const GridCardIconList = [
   {
@@ -37,6 +38,14 @@ const settingPopupVisible = ref(false)
 function handleSetting() {
   settingPopupVisible.value = true
 }
+
+onBackPress(() => {
+  // 「设置弹出层」打开时，侧滑时仅关闭弹出层，不执行退出操作
+  if (settingPopupVisible.value) {
+    settingPopupVisible.value = false
+    return true
+  }
+})
 
 // 点击查看
 function handleView(item: TGridCardItem) {

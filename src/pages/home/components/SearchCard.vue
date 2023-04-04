@@ -1,9 +1,7 @@
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import { ref } from 'vue'
 import type { THouseQueryParams } from '@/types/home.type'
 import { RegionType } from '@/enums/home'
-import CitySelectPopup from './CitySelectPopup.vue'
 import { computed } from 'vue'
 
 const searchParams = reactive<THouseQueryParams>({
@@ -25,16 +23,15 @@ const dateRange = computed({
   }
 })
 
-const citySelectPopupVisible = ref(false)
+const emit = defineEmits<{
+  (e: 'search', searchParams: THouseQueryParams): void
+  (e: 'selectCity'): void
+}>()
 
 // 选择城市
 function handleSelectCity() {
-  citySelectPopupVisible.value = true
+  emit('selectCity')
 }
-
-const emit = defineEmits<{
-  (e: 'search', searchParams: THouseQueryParams): void
-}>()
 
 // 搜索
 function handleSearch() {
@@ -85,7 +82,6 @@ function handleSearch() {
         <button type="primary" @tap="handleSearch">搜索房源</button>
       </uni-forms>
     </view>
-    <CitySelectPopup v-model:visible="citySelectPopupVisible" />
   </uni-card>
 </template>
 
