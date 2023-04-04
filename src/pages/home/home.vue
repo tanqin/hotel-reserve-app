@@ -2,7 +2,6 @@
 import type { THouseQueryParams } from '@/types/home.type'
 import DiscountList from './components/DiscountList.vue'
 import GuessList from './components/GuessList.vue'
-import NavGroup from './components/NavGroup.vue'
 import SearchCard from './components/SearchCard.vue'
 import SpecialList from './components/SpecialList.vue'
 import SearchResultPopup from './components/SearchResultPopup.vue'
@@ -37,6 +36,29 @@ onBackPress(() => {
     return true
   }
 })
+
+const gridCardList = [
+  {
+    icon: 'icon-cook',
+    text: '可以做饭'
+  },
+  {
+    icon: 'icon-house',
+    text: '整个房源'
+  },
+  {
+    icon: 'icon-key',
+    text: '自助入住'
+  },
+  {
+    icon: 'icon-fund',
+    text: '特惠房源'
+  },
+  {
+    icon: 'icon-photo',
+    text: '当地体验'
+  }
+]
 </script>
 
 <template>
@@ -57,7 +79,7 @@ onBackPress(() => {
           v-model:visible="searchResultPopupVisible"
           :searchParams="searchParams!"
         />
-        <NavGroup />
+        <GridCard :list="gridCardList" :column="5" color="#f59b22" />
         <view class="recommend-module">
           <SpecialList />
           <DiscountList />

@@ -14,10 +14,7 @@ withDefaults(
     textColor?: string
   }>(),
   {
-    column: 3,
-    color: '#7f7f7f',
-    iconColor: '#7f7f7f',
-    textColor: '#7f7f7f'
+    column: 3
   }
 )
 
@@ -56,6 +53,7 @@ function handleTap(gridCardItem: TGridCardItem) {
     justify-content: space-between;
     align-items: center;
     padding: 24rpx;
+    font-size: 24rpx;
     .icon {
       margin-bottom: 24rpx;
     }
