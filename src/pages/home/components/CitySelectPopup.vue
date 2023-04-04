@@ -4,14 +4,9 @@ import CityCheckbox from './CityCheckbox.vue'
 import { ref } from 'vue'
 import { RegionType } from '@/enums/home'
 
-const props = withDefaults(
-  defineProps<{
-    visible?: boolean
-  }>(),
-  {
-    visible: false
-  }
-)
+const props = defineProps<{
+  visible?: boolean
+}>()
 
 const emit = defineEmits<{
   (e: 'update:visible', visible: boolean): void

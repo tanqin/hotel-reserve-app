@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onLoad, onShow } from '@dcloudio/uni-app'
+import type { DefineComponent } from 'vue'
 import type { THouseInfo } from '@/types/home.type'
 import SpecialItem from '../components/SpecialItem.vue'
-import type { DefineComponent } from 'vue'
 import BookTool from './components/BookTool.vue'
+import HousePhotoWallPopup from './components/HousePhotoWallPopup.vue'
 
 const moreHouseList = ref<THouseInfo[]>([])
 
@@ -114,7 +115,6 @@ function getHouseDetail() {
     houseDetail.value = {
       id,
       pictures: [
-        'https://img02.mockplus.cn/image/2020-09-08/a1d0e0d0-f12b-11ea-bb18-5957e87ab951.jpg',
         'https://img02.mockplus.cn/image/2020-09-08/7cd54210-f150-11ea-aeeb-2db5a91e8f48.jpg',
         'https://img02.mockplus.cn/image/2020-09-08/95aafc30-f150-11ea-bf79-4bf7403aaa5c.jpg',
         'https://img02.mockplus.cn/image/2020-09-08/86be7d50-f150-11ea-aeeb-2db5a91e8f48.jpg',
@@ -166,6 +166,13 @@ function getHouseDetail() {
   }, 500)
 }
 
+const photoWallPopupVisible = ref(false)
+
+// 查看房源实拍
+function handleViewHousePhoto() {
+  photoWallPopupVisible.value = true
+}
+
 // 联系房东
 function handleContactLandlord() {
   uni.makePhoneCall({
@@ -192,7 +199,13 @@ function handleContactLandlord() {
       </template>
     </uni-nav-bar>
     <!-- 封面信息 -->
-    <image class="cover-info" :src="houseDetail.pictures[0]" mode="aspectFill" />
+    <image
+      class="cover-info"
+      :src="houseDetail.pictures[0]"
+      mode="aspectFill"
+      @tap="handleViewHousePhoto"
+    />
+    <HousePhotoWallPopup :pictures="houseDetail.pictures" v-model:visible="photoWallPopupVisible" />
     <!-- 基础信息 -->
     <view class="base-info p24">
       <view class="notes">
@@ -279,7 +292,6 @@ function handleContactLandlord() {
         </uni-grid-item>
       </uni-grid>
     </view>
-    <!-- <uni-goods-nav :options="options" :fill="true" :button-group="buttonGroup" /> -->
     <BookTool :data="houseDetail" />
     <uni-popup ref="sharePopup" type="share">
       <uni-popup-share title="分享到" />

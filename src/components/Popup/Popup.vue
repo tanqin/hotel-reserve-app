@@ -10,11 +10,16 @@ const props = withDefaults(
     navTitle?: string
     // 默认顶部导航是否可见
     showTop?: boolean
+    // 默认导航左侧图标
+    leftIcon?: string
+    // 默认导航是否吸顶
+    fixedTop?: boolean
   }>(),
   {
     visible: false,
     navTitle: '',
-    showTop: true
+    showTop: true,
+    leftIcon: 'closeempty'
   }
 )
 
@@ -52,10 +57,14 @@ const slotTop = !!useSlots().top
     background-color="#fff"
     @change="handlePopupVisibleChange"
   >
-    <view class="default-top-bar" v-if="!slotTop && showTop">
-      <uni-icons type="closeempty" @tap="handleClose" />
-      <view class="title">{{ navTitle }}</view>
-      <view class="cancel" @tap="handleClose">取消</view>
+    <view class="placeholder-box">
+      <view :class="['default-top-bar', fixedTop && 'fixed']" v-if="!slotTop && showTop">
+        <uni-icons :type="leftIcon" @tap="handleClose" size="24" />
+        <view class="title">{{ navTitle }}</view>
+        <slot name="nav-right">
+          <view class="cancel" @tap="handleClose">取消</view>
+        </slot>
+      </view>
     </view>
     <slot name="top"></slot>
     <slot></slot>
@@ -70,11 +79,24 @@ const slotTop = !!useSlots().top
     overflow-y: scroll;
     width: 750rpx;
     height: calc(100vh - var(--status-bar-height));
-    padding: 28rpx 28rpx var(--window-bottom) !important;
+    padding: 0 28rpx var(--window-bottom) !important;
     .default-top-bar {
       display: flex;
       justify-content: space-between;
-      padding: 0 6rpx 28rpx;
+      align-items: center;
+      padding: 24rpx 0;
+      background-color: #fff;
+      &.fixed {
+        position: fixed;
+        z-index: 1;
+        left: 0rpx;
+        right: 0rpx;
+        top: 0;
+        padding: 24rpx 24rpx;
+      }
+    }
+    .placeholder-box {
+      height: 90rpx;
     }
   }
 }
