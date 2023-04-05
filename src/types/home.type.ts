@@ -1,3 +1,5 @@
+import type { TPageParams } from './common.type'
+
 /* 房源查询参数 */
 export type THouseQueryParams = {
   // 地区类型（0：国内 1：国际/港澳台）
@@ -14,11 +16,7 @@ export type THouseQueryParams = {
   endTime: string
   // 房客人数
   numOfPeople: number
-  // 页码
-  pageNo: number
-  // 页容量
-  pageSize: number
-}
+} & TPageParams
 
 /* 标签 */
 export type TTag = {

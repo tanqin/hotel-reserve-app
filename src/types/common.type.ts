@@ -4,7 +4,9 @@
 
 /* 分页查询参数 */
 export type TPageParams = {
+  // 页码
   pageNo: number
+  // 页容量
   pageSize: number
 }
 

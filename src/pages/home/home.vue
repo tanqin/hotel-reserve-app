@@ -94,7 +94,7 @@ const gridCardList = [
         />
         <GridCard :list="gridCardList" :column="5" color="#f59b22" @itemTap="handleQuickSearch" />
         <view class="recommend-module">
-          <SpecialList />
+          <SpecialList @showMore="handleSearch" />
           <DiscountList />
           <GuessList />
         </view>

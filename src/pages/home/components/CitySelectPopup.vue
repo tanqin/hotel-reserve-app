@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
-import CityCheckbox from './CityCheckbox.vue'
 import { ref } from 'vue'
 import { RegionType } from '@/enums/home'
 
@@ -20,6 +19,41 @@ const popupVisible = computed({
     emit('update:visible', newVal)
   }
 })
+
+const cityTagList = [
+  {
+    id: '0',
+    text: '成都'
+  },
+  {
+    id: '1',
+    text: '重庆'
+  },
+  {
+    id: '2',
+    text: '厦门'
+  },
+  {
+    id: '3',
+    text: '西安'
+  },
+  {
+    id: '4',
+    text: '丽江'
+  },
+  {
+    id: '5',
+    text: '上海'
+  },
+  {
+    id: '6',
+    text: '大理'
+  },
+  {
+    id: '7',
+    text: '三亚'
+  }
+]
 
 const cityList = ref([
   {
@@ -292,7 +326,7 @@ const cityList = ref([
     />
     <view class="hot-city mb24">
       <h4>热门城市</h4>
-      <CityCheckbox />
+      <TagGroup :tagList="cityTagList" size="large" wrap backgroundColor="#fff" />
     </view>
     <h4>所有城市</h4>
     <uni-indexed-list class="city-list" :options="cityList" :showSelect="true" />

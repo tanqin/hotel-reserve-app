@@ -5,13 +5,20 @@ import { ref } from 'vue'
 
 const props = withDefaults(
   defineProps<{
+    // 标签列表
     tagList: TTag[]
+    // 标签尺寸
+    size?: 'large' | 'default'
+    // 一行显示不下时是否自动换行
+    wrap?: boolean
     // 禁用 tag 点击高亮
     disable?: boolean
+    // 背景颜色
     backgroundColor?: string
   }>(),
   {
-    tagList: () => []
+    tagList: () => [],
+    size: 'default'
   }
 )
 
@@ -22,7 +29,10 @@ const activeTag = ref()
 </script>
 
 <template>
-  <view class="city-checkbox hidden-scroll-bar" :style="{ backgroundColor: props.backgroundColor }">
+  <view
+    :class="['city-checkbox', size, wrap && 'wrap', 'hidden-scroll-bar']"
+    :style="{ backgroundColor: props.backgroundColor }"
+  >
     <uni-data-checkbox mode="tag" v-model="activeTag" :localdata="tagList" />
   </view>
 </template>
@@ -36,10 +46,7 @@ const activeTag = ref()
     white-space: nowrap;
     .checklist-box {
       display: inline-flex;
-      // width: 146rpx;
-      // height: 80rpx;
       background-color: #fff !important;
-      border: none !important;
       &.is-checked {
         background-color: $green !important;
       }
@@ -47,6 +54,17 @@ const activeTag = ref()
         justify-content: center;
         align-items: center;
       }
+    }
+  }
+  &.large {
+    :deep(.checklist-group .checklist-box) {
+      width: 146rpx;
+      height: 80rpx;
+    }
+  }
+  &.wrap {
+    :deep(.checklist-group) {
+      white-space: normal;
     }
   }
 }
